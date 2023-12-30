@@ -7,6 +7,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { addToCart } from "../../redux/CartSlice";
 import { fireDb } from "../../firebase/FirebaseConfig";
+import Loader from "../../components/loader/Loader";
 
 function ProductInfo() {
   const context = useContext(MyContext);
@@ -20,8 +21,7 @@ function ProductInfo() {
     const getProductData = async () => {
       setLoading(true);
       try {
-        const id = params.id;
-        const productTemp = await getDoc(doc(fireDb, "products", id));
+        const productTemp = await getDoc(doc(fireDb, "products", params.id));
         // console.log(productTemp)
         setProducts(productTemp.data());
         setLoading(false);
@@ -31,7 +31,7 @@ function ProductInfo() {
       }
     };
     getProductData();
-  }, []);
+  }, [params.id, setLoading]);
 
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart);
@@ -50,6 +50,7 @@ function ProductInfo() {
   return (
     <Layout>
       <section className="text-gray-600 body-font overflow-hidden">
+        {loading && <Loader />}
         <div className="container px-5 py-10 mx-auto">
           {products && (
             <div className="lg:w-4/5 mx-auto flex flex-wrap">

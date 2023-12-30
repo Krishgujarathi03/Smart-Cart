@@ -107,6 +107,7 @@ const Navbar = () => {
                   {user ? (
                     <div className="flow-root">
                       <a
+                        href="/#"
                         onClick={logout}
                         className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
                         style={{ color: mode === "dark" ? "white" : "" }}
@@ -133,7 +134,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
+                  <a href="/#" className="-m-2 flex items-center p-2">
                     <img
                       src="img/indiaflag.png"
                       alt=""
@@ -254,6 +255,7 @@ const Navbar = () => {
 
                   {user ? (
                     <a
+                      href="/#"
                       className="text-sm font-medium text-gray-700 cursor-pointer  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                       onClick={logout}
@@ -266,7 +268,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-700 ">
+                  <a href="/#" className="flex items-center text-gray-700 ">
                     <img
                       src="https://ecommerce-sk.vercel.app/img/indiaflag.png"
                       alt=""
@@ -281,7 +283,7 @@ const Navbar = () => {
                   </a>
                 </div>
                 <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-700 ">
+                  <a href="/#" className="flex items-center text-gray-700 ">
                     <img
                       className="inline-block w-10 h-10 rounded-full"
                       src="https://www.jiocinema.com/images/profile/profile_avatar-v2.svg"
