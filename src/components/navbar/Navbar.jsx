@@ -92,6 +92,8 @@ const Navbar = () => {
                       className="text-sm font-medium text-gray-700 "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
+                      {" "}
+                      <br />
                       Signup
                     </Link>
                   )}
