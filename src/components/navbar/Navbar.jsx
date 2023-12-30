@@ -236,7 +236,13 @@ const Navbar = () => {
                       Order
                     </Link>
                   ) : (
-                    ""
+                    <Link
+                      to={"/signup"}
+                      className="text-sm font-medium text-gray-700 "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Signup
+                    </Link>
                   )}
 
                   {user?.user?.email === "gujarathikrish@gmail.com" ? (
